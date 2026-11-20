@@ -1,0 +1,6 @@
+{
+  "name": "Quy hoạch tổng thể TPHCM 2025-2050",
+  "description": "Quy hoạch tổng thể TPHCM giai đoạn 2025-2050, tầm nhìn 100 năm | Interactive Data Journalism",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
