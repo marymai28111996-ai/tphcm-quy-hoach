@@ -223,8 +223,18 @@
       background-size: 200% 100%;
       animation: dividerShimmer 3.5s linear infinite;
     }
+    @keyframes zoneCardInRight {
+      0% { opacity: 0; transform: translateX(18px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes zoneCardInLeft {
+      0% { opacity: 0; transform: translateX(-18px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    .zone-enter-right { animation: zoneCardInRight 0.28s ease-out; }
+    .zone-enter-left { animation: zoneCardInLeft 0.28s ease-out; }
     @media (prefers-reduced-motion: reduce) {
-      .anim-float, .anim-orbit, .anim-pulse-ring, .anim-wave, .anim-train, .anim-bar, .anim-divider {
+      .anim-float, .anim-orbit, .anim-pulse-ring, .anim-wave, .anim-train, .anim-bar, .anim-divider, .zone-enter-right, .zone-enter-left {
         animation: none !important;
       }
     }
@@ -326,11 +336,6 @@
             <div class="compass-dir p-4 rounded-2xl bg-white border-2 border-slate-200 hover:border-mint transition-all cursor-pointer shadow-sm text-center" data-dir="south" id="dirSouth">
               <span class="px-3 py-1 rounded-full bg-mint/10 text-mint text-xs font-black uppercase">Phía Nam</span>
               <div class="text-base font-black text-slate-900 mt-1">giáp tỉnh Đồng Tháp và Biển Đông</div>
-            </div>
-            <!-- Center Summary Callout -->
-            <div class="p-4 rounded-2xl bg-gradient-to-r from-cobalt to-ice text-white text-center shadow-md">
-              <div class="text-xs font-extrabold uppercase opacity-85">Ranh giới quy hoạch TPHCM</div>
-              <div class="text-lg font-black mt-0.5">Kết nối đa chiều Đông Nam Bộ - Tây Nguyên - ĐBSCL &amp; Biển Đông</div>
             </div>
           </div>
         </div>
@@ -535,61 +540,61 @@
           <div class="lg:col-span-5 space-y-6 pb-6">
             <div class="grdp-stage-card p-6 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/20 hover:border-white transition-all cursor-pointer shadow-lg hover:shadow-xl hover:-translate-y-0.5" data-stage="0">
               <div class="flex items-center justify-between mb-2">
-                <span class="text-2xl font-black font-display text-white">2030</span>
+                <span class="text-3xl font-black font-display text-white">2030</span>
               </div>
-              <div class="text-xs text-slate-100 space-y-1.5">
+              <div class="text-sm text-slate-100 space-y-1.5">
                 <div>Tăng trưởng GRDP bình quân đạt tối thiểu: <strong class="text-white font-black tabular-nums" data-countup>10,5%/năm</strong></div>
                 <div>GRDP đạt khoảng: <strong class="text-white font-black tabular-nums" data-countup>200 - 225 tỷ USD</strong></div>
-                <div>GRDP bình quân đầu người đạt tối thiểu: <strong class="text-sun font-black text-sm tabular-nums" data-countup>14.500 USD</strong></div>
+                <div>GRDP bình quân đầu người đạt tối thiểu: <strong class="text-sun font-black text-base tabular-nums" data-countup>14.500 USD</strong></div>
               </div>
             </div>
             <div class="grdp-stage-card p-6 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/20 hover:border-mint transition-all cursor-pointer shadow-lg hover:shadow-xl hover:-translate-y-0.5" data-stage="1">
               <div class="flex items-center justify-between mb-2">
-                <span class="text-2xl font-black font-display text-white">2035</span>
+                <span class="text-3xl font-black font-display text-white">2035</span>
               </div>
-              <div class="text-xs text-slate-100 space-y-1.5">
+              <div class="text-sm text-slate-100 space-y-1.5">
                 <div>Tăng trưởng GRDP bình quân đạt tối thiểu: <strong class="text-white font-black tabular-nums" data-countup>10%/năm</strong></div>
                 <div>GRDP đạt khoảng: <strong class="text-white font-black tabular-nums" data-countup>400 - 450 tỷ USD</strong></div>
-                <div>GRDP bình quân đầu người đạt tối thiểu: <strong class="text-mint font-black text-sm tabular-nums" data-countup>25.000 USD</strong></div>
+                <div>GRDP bình quân đầu người đạt tối thiểu: <strong class="text-mint font-black text-base tabular-nums" data-countup>25.000 USD</strong></div>
               </div>
             </div>
             <div class="grdp-stage-card p-6 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/20 hover:border-ice transition-all cursor-pointer shadow-lg hover:shadow-xl hover:-translate-y-0.5" data-stage="2">
               <div class="flex items-center justify-between mb-2">
-                <span class="text-2xl font-black font-display text-white">2045</span>
+                <span class="text-3xl font-black font-display text-white">2045</span>
               </div>
-              <div class="text-xs text-slate-100 space-y-1.5">
+              <div class="text-sm text-slate-100 space-y-1.5">
                 <div>Tăng trưởng GRDP bình quân đạt tối thiểu: <strong class="text-white font-black tabular-nums" data-countup>10%/năm</strong></div>
                 <div>GRDP đạt khoảng: <strong class="text-white font-black tabular-nums" data-countup>1.300 - 1.700 tỷ USD</strong></div>
-                <div>GRDP bình quân đầu người đạt tối thiểu: <strong class="text-white font-black text-sm tabular-nums" data-countup>75.000 USD</strong></div>
+                <div>GRDP bình quân đầu người đạt tối thiểu: <strong class="text-white font-black text-base tabular-nums" data-countup>75.000 USD</strong></div>
               </div>
             </div>
             <div class="grdp-stage-card p-6 rounded-2xl bg-gradient-to-r from-energy/30 to-sun/30 backdrop-blur-md border-2 border-sun hover:border-white transition-all cursor-pointer shadow-xl shadow-energy/20 hover:-translate-y-0.5 ring-2 ring-sun/60" data-stage="3">
               <div class="flex items-center justify-between mb-2">
-                <span class="text-2xl font-black font-display text-sun drop-shadow-sm">2075 và xa hơn</span>
+                <span class="text-3xl font-black font-display text-sun drop-shadow-sm">2075 và xa hơn</span>
               </div>
-              <div class="text-xs text-white space-y-1.5">
+              <div class="text-sm text-white space-y-1.5">
                 <div>Tăng trưởng GRDP bình quân giai đoạn 2046 - 2075 đạt tối thiểu: <strong class="text-white font-black tabular-nums" data-countup>6%/năm</strong></div>
-                <div>GRDP bình quân đầu người đạt tối thiểu: <strong class="text-sun font-black text-base tabular-nums" data-countup>100.000 USD</strong> (tăng gần 7 lần so với 2030)</div>
+                <div>GRDP bình quân đầu người đạt tối thiểu: <strong class="text-sun font-black text-lg tabular-nums" data-countup>100.000 USD</strong> (tăng gần 7 lần so với 2030)</div>
               </div>
             </div>
           </div>
           <div class="lg:col-span-7 lg:sticky lg:top-14">
             <div class="rounded-3xl p-6 sm:p-8 bg-white border border-slate-200 shadow-xl space-y-6 transition-all text-slate-900" id="grdpStageContainer">
               <div class="flex items-center justify-between pb-3 border-b border-slate-100">
-                <div class="text-xs font-black uppercase tracking-wider text-slate-500">Chỉ số kinh tế trọng điểm <span class="text-cobalt font-display text-sm ml-1 font-black" id="grdpYearLabel">Năm 2075+</span></div>
+                <div class="text-sm font-black uppercase tracking-wider text-slate-500">Chỉ số kinh tế trọng điểm <span class="text-cobalt font-display text-base ml-1 font-black" id="grdpYearLabel">Năm 2075+</span></div>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                 <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
-                  <span class="text-[11px] font-bold text-slate-500 uppercase">Tăng trưởng GRDP</span>
-                  <div class="text-2xl sm:text-3xl font-black font-display text-cobalt tabular-nums mt-1" id="grdpGrowthVal" data-countup>≥ 6%/năm</div>
+                  <span class="text-xs font-bold text-slate-500 uppercase">Tăng trưởng GRDP</span>
+                  <div class="text-3xl sm:text-4xl font-black font-display text-cobalt tabular-nums mt-1" id="grdpGrowthVal" data-countup>≥ 6%/năm</div>
                 </div>
                 <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
-                  <span class="text-[11px] font-bold text-slate-500 uppercase">Quy mô GRDP</span>
-                  <div class="text-2xl sm:text-3xl font-black font-display text-ice tabular-nums mt-1" id="grdpTotalVal" data-countup></div>
+                  <span class="text-xs font-bold text-slate-500 uppercase">Quy mô GRDP</span>
+                  <div class="text-3xl sm:text-4xl font-black font-display text-ice tabular-nums mt-1" id="grdpTotalVal" data-countup></div>
                 </div>
                 <div class="p-4 rounded-2xl bg-orange-50 border-2 border-sun shadow-sm">
-                  <span class="text-[11px] font-bold text-orange-700 uppercase">Đầu người (Tối thiểu)</span>
-                  <div class="text-3xl sm:text-4xl font-black font-display text-energy tabular-nums mt-1" id="grdpPerCapitaVal" data-countup>100.000 USD</div>
+                  <span class="text-xs font-bold text-orange-700 uppercase">Đầu người (Tối thiểu)</span>
+                  <div class="text-4xl sm:text-5xl font-black font-display text-energy tabular-nums mt-1" id="grdpPerCapitaVal" data-countup>100.000 USD</div>
                 </div>
               </div>
               <div class="h-60 sm:h-64 w-full bg-slate-50/50 p-2 rounded-2xl border border-slate-100">
@@ -630,21 +635,21 @@
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
         <a class="p-5 rounded-2xl bg-white border-2 border-energy hover:shadow-lg hover:shadow-energy/10 transition-all flex items-center justify-between group" href="#sub-5cuc">
           <div>
-            <div class="text-sm font-bold text-slate-800">5 Cực động lực phát triển</div>
+            <div class="text-base font-bold text-slate-800">5 Cực động lực phát triển</div>
           </div>
-          <div class="text-4xl font-black font-display text-energy huge-num tabular-nums" data-countup>05</div>
+          <div class="text-5xl font-black font-display text-energy huge-num tabular-nums" data-countup>05</div>
         </a>
         <a class="p-5 rounded-2xl bg-white border-2 border-mint hover:shadow-lg hover:shadow-mint/10 transition-all flex items-center justify-between group" href="#sub-5vetinh">
           <div>
-            <div class="text-sm font-bold text-slate-800">5 Trung tâm vệ tinh</div>
+            <div class="text-base font-bold text-slate-800">5 Trung tâm vệ tinh</div>
           </div>
-          <div class="text-4xl font-black font-display text-mint huge-num tabular-nums" data-countup>05</div>
+          <div class="text-5xl font-black font-display text-mint huge-num tabular-nums" data-countup>05</div>
         </a>
         <a class="p-5 rounded-2xl bg-white border-2 border-sun hover:shadow-lg hover:shadow-sun/15 transition-all flex items-center justify-between group" href="#sub-10vung">
           <div>
-            <div class="text-sm font-bold text-slate-800">10 Vùng quản trị phát triển</div>
+            <div class="text-base font-bold text-slate-800">10 Vùng quản trị phát triển</div>
           </div>
-          <div class="text-4xl font-black font-display text-sun huge-num tabular-nums" data-countup>10</div>
+          <div class="text-5xl font-black font-display text-sun huge-num tabular-nums" data-countup>10</div>
         </a>
       </div>
 
@@ -664,8 +669,8 @@
                   <img alt="Cực lõi trung tâm: Sài Gòn - Chợ Lớn - Thủ Thiêm" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="/tphcm-1.jpg" title="Cực lõi trung tâm: Sài Gòn - Chợ Lớn - Thủ Thiêm">
                   <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-black/30"></div>
                   <div class="relative z-10 space-y-3">
-                    <h4 class="text-2xl font-black font-display text-white leading-tight drop-shadow-md">Cực lõi trung tâm: Sài Gòn - Chợ Lớn - Thủ Thiêm</h4>
-                    <div class="inline-flex items-center gap-2 bg-slate-900 hover:bg-sky-600 text-white font-bold text-xs rounded-xl px-3 py-1.5 transition-all shadow-sm">
+                    <h4 class="text-3xl font-black font-display text-white leading-tight drop-shadow-md">Cực lõi trung tâm: Sài Gòn - Chợ Lớn - Thủ Thiêm</h4>
+                    <div class="inline-flex items-center gap-2 bg-slate-900 hover:bg-sky-600 text-white font-bold text-sm rounded-xl px-3 py-1.5 transition-all shadow-sm">
                       <span>Lật xem</span>
                       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
                     </div>
@@ -674,8 +679,8 @@
                 <!-- Back Side -->
                 <div class="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl border-2 border-sun bg-white p-6 flex flex-col justify-between text-slate-900 overflow-hidden">
                   <div class="space-y-3 overflow-y-auto pr-1">
-                    <h4 class="text-lg font-black font-display text-slate-900 leading-snug">Cực lõi trung tâm</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
+                    <h4 class="text-xl font-black font-display text-slate-900 leading-snug">Cực lõi trung tâm</h4>
+                    <p class="text-base text-slate-600 leading-relaxed">
                       Tập trung tại Sài Gòn - Chợ Lớn - Thủ Thiêm, là trung tâm tài chính quốc tế, quản trị, thương mại, dịch vụ, du lịch, văn hóa, công viên chuyên đề tầm cỡ quốc tế và kinh tế sáng tạo; ưu tiên tái thiết, bảo tồn di sản.
                     </p>
                   </div>
@@ -691,8 +696,8 @@
                   <img alt="Sân bay Long Thành và cực đổi mới sáng tạo phía Đông" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="/sân bay Long Thành.jpg">
                   <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-black/30"></div>
                   <div class="relative z-10 space-y-3">
-                    <h4 class="text-2xl font-black font-display text-white leading-tight drop-shadow-md">Cực đổi mới sáng tạo phía Đông, Đông Bắc</h4>
-                    <div class="inline-flex items-center gap-2 bg-slate-900 hover:bg-sky-600 text-white font-bold text-xs rounded-xl px-3 py-1.5 transition-all shadow-sm">
+                    <h4 class="text-3xl font-black font-display text-white leading-tight drop-shadow-md">Cực đổi mới sáng tạo phía Đông, Đông Bắc</h4>
+                    <div class="inline-flex items-center gap-2 bg-slate-900 hover:bg-sky-600 text-white font-bold text-sm rounded-xl px-3 py-1.5 transition-all shadow-sm">
                       <span>Lật xem</span>
                       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
                     </div>
@@ -701,8 +706,8 @@
                 <!-- Back Side -->
                 <div class="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl border-2 border-cobalt bg-white p-6 flex flex-col justify-between text-slate-900 overflow-hidden">
                   <div class="space-y-3 overflow-y-auto pr-1">
-                    <h4 class="text-lg font-black font-display text-slate-900 leading-snug">Cực đổi mới sáng tạo phía Đông, Đông Bắc</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
+                    <h4 class="text-xl font-black font-display text-slate-900 leading-snug">Cực đổi mới sáng tạo phía Đông, Đông Bắc</h4>
+                    <p class="text-base text-slate-600 leading-relaxed">
                       Kết nối Thủ Đức, Dĩ An, Thuận An, Bình Dương, Tân Uyên với sân bay Long Thành, tập trung công nghệ cao, AI, bán dẫn và giáo dục đại học.
                     </p>
                   </div>
@@ -718,8 +723,8 @@
                   <img alt="Bàu Bàng - Cực công nghiệp logistics phía Bắc" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="/Bàu Bàng.jpg">
                   <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-black/30"></div>
                   <div class="relative z-10 space-y-3">
-                    <h4 class="text-2xl font-black font-display text-white leading-tight drop-shadow-md">Cực công nghiệp - logistics phía Bắc</h4>
-                    <div class="inline-flex items-center gap-2 bg-slate-900 hover:bg-sky-600 text-white font-bold text-xs rounded-xl px-3 py-1.5 transition-all shadow-sm">
+                    <h4 class="text-3xl font-black font-display text-white leading-tight drop-shadow-md">Cực công nghiệp - logistics phía Bắc</h4>
+                    <div class="inline-flex items-center gap-2 bg-slate-900 hover:bg-sky-600 text-white font-bold text-sm rounded-xl px-3 py-1.5 transition-all shadow-sm">
                       <span>Lật xem</span>
                       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
                     </div>
@@ -728,8 +733,8 @@
                 <!-- Back Side -->
                 <div class="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl border-2 border-energy bg-white p-6 flex flex-col justify-between text-slate-900 overflow-hidden">
                   <div class="space-y-3 overflow-y-auto pr-1">
-                    <h4 class="text-lg font-black font-display text-slate-900 leading-snug">Cực công nghiệp - logistics phía Bắc</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
+                    <h4 class="text-xl font-black font-display text-slate-900 leading-snug">Cực công nghiệp - logistics phía Bắc</h4>
+                    <p class="text-base text-slate-600 leading-relaxed">
                       Phát triển tại Bến Cát, Bàu Bàng và vùng phụ cận, chuyển các KCN đơn chức năng thành hệ sinh thái công nghiệp, logistics, đô thị và dịch vụ thế hệ mới.
                     </p>
                   </div>
@@ -745,8 +750,8 @@
                   <img alt="Vũng Tàu - Cần Giờ - Cực kinh tế biển phía Nam" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="/Vũng Tàu.jpg">
                   <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-black/30"></div>
                   <div class="relative z-10 space-y-3">
-                    <h4 class="text-2xl font-black font-display text-white leading-tight drop-shadow-md">Cực cảng biển - thương mại tự do - công nghiệp năng lượng phía Nam</h4>
-                    <div class="inline-flex items-center gap-2 bg-slate-900 hover:bg-sky-600 text-white font-bold text-xs rounded-xl px-3 py-1.5 transition-all shadow-sm">
+                    <h4 class="text-3xl font-black font-display text-white leading-tight drop-shadow-md">Cực cảng biển - thương mại tự do - công nghiệp năng lượng phía Nam</h4>
+                    <div class="inline-flex items-center gap-2 bg-slate-900 hover:bg-sky-600 text-white font-bold text-sm rounded-xl px-3 py-1.5 transition-all shadow-sm">
                       <span>Lật xem</span>
                       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
                     </div>
@@ -755,8 +760,8 @@
                 <!-- Back Side -->
                 <div class="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl border-2 border-ice bg-white p-6 flex flex-col justify-between text-slate-900 overflow-hidden">
                   <div class="space-y-3 overflow-y-auto pr-1">
-                    <h4 class="text-lg font-black font-display text-slate-900 leading-snug">Cực cảng biển - thương mại tự do - công nghiệp năng lượng phía Nam</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
+                    <h4 class="text-xl font-black font-display text-slate-900 leading-snug">Cực cảng biển - thương mại tự do - công nghiệp năng lượng phía Nam</h4>
+                    <p class="text-base text-slate-600 leading-relaxed">
                       Kết nối Châu Đức, Long Sơn, Phú Mỹ, Vũng Tàu và Cần Giờ, phát huy thế mạnh cảng biển, logistics, hàng hải, thương mại tự do và năng lượng sạch.
                     </p>
                   </div>
@@ -772,8 +777,8 @@
                   <img alt="Trung tâm y tế chuyên sâu, giáo dục phía Tây" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="/y tế.jpg" title="Cực đô thị, giáo dục, y tế phía Tây">
                   <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-black/30"></div>
                   <div class="relative z-10 space-y-3">
-                    <h4 class="text-2xl font-black font-display text-white leading-tight drop-shadow-md">Cực đô thị, giáo dục, y tế phía Tây</h4>
-                    <div class="inline-flex items-center gap-2 bg-slate-900 hover:bg-sky-600 text-white font-bold text-xs rounded-xl px-3 py-1.5 transition-all shadow-sm">
+                    <h4 class="text-3xl font-black font-display text-white leading-tight drop-shadow-md">Cực đô thị, giáo dục, y tế phía Tây</h4>
+                    <div class="inline-flex items-center gap-2 bg-slate-900 hover:bg-sky-600 text-white font-bold text-sm rounded-xl px-3 py-1.5 transition-all shadow-sm">
                       <span>Lật xem</span>
                       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
                     </div>
@@ -782,8 +787,8 @@
                 <!-- Back Side -->
                 <div class="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl border-2 border-mint bg-white p-6 flex flex-col justify-between text-slate-900 overflow-hidden">
                   <div class="space-y-3 overflow-y-auto pr-1">
-                    <h4 class="text-lg font-black font-display text-slate-900 leading-snug">Cực đô thị, giáo dục, y tế phía Tây</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
+                    <h4 class="text-xl font-black font-display text-slate-900 leading-snug">Cực đô thị, giáo dục, y tế phía Tây</h4>
+                    <p class="text-base text-slate-600 leading-relaxed">
                       Phát triển các khu đô thị đồng bộ, trung tâm đào tạo và y tế chuyên sâu, triển lãm và dịch vụ cao cấp, giảm áp lực hạ tầng cho khu vực lõi thành phố.
                     </p>
                   </div>
@@ -807,8 +812,8 @@
                 <img alt="Côn Đảo" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="/Côn Đảo.jpg">
               </div>
               <div class="space-y-2">
-                <h4 class="text-xl font-black font-display text-slate-900">Côn Đảo</h4>
-                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Du lịch sinh thái biển đảo, di sản, nghiên cứu khoa học gắn với bảo tồn thiên nhiên…</p>
+                <h4 class="text-2xl font-black font-display text-slate-900">Côn Đảo</h4>
+                <p class="text-sm sm:text-base text-slate-600 leading-relaxed">Du lịch sinh thái biển đảo, di sản, nghiên cứu khoa học gắn với bảo tồn thiên nhiên…</p>
               </div>
             </div>
             <div class="satellite-card absolute transition-all duration-500 ease-in-out cursor-pointer w-[300px] sm:w-[380px] bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-lg z-10 scale-90 opacity-60 translate-x-[70%] sm:translate-x-[65%] pointer-events-auto" data-index="1">
@@ -816,8 +821,8 @@
                 <img alt="Vũng Tàu - Long Hải - Hồ Tràm" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="/Long Hải.jpg">
               </div>
               <div class="space-y-2">
-                <h4 class="text-xl font-black font-display text-slate-900">Vũng Tàu - Long Hải - Hồ Tràm</h4>
-                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">du lịch nghỉ dưỡng, dịch vụ biển, thể thao và chăm sóc sức khỏe…</p>
+                <h4 class="text-2xl font-black font-display text-slate-900">Vũng Tàu - Long Hải - Hồ Tràm</h4>
+                <p class="text-sm sm:text-base text-slate-600 leading-relaxed">du lịch nghỉ dưỡng, dịch vụ biển, thể thao và chăm sóc sức khỏe…</p>
               </div>
             </div>
             <div class="satellite-card absolute transition-all duration-500 ease-in-out cursor-pointer w-[300px] sm:w-[380px] bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-md z-0 scale-75 opacity-0 translate-x-[110%] pointer-events-none" data-index="2">
@@ -825,8 +830,8 @@
                 <img alt="Hóc Môn - Củ Chi" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="/Hóc Môn.jpg">
               </div>
               <div class="space-y-2">
-                <h4 class="text-xl font-black font-display text-slate-900">Hóc Môn - Củ Chi</h4>
-                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">đô thị sinh thái, công nghệ sinh học, nông nghiệp công nghệ cao và du lịch văn hóa - lịch sử</p>
+                <h4 class="text-2xl font-black font-display text-slate-900">Hóc Môn - Củ Chi</h4>
+                <p class="text-sm sm:text-base text-slate-600 leading-relaxed">đô thị sinh thái, công nghệ sinh học, nông nghiệp công nghệ cao và du lịch văn hóa - lịch sử</p>
               </div>
             </div>
             <div class="satellite-card absolute transition-all duration-500 ease-in-out cursor-pointer w-[300px] sm:w-[380px] bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-md z-0 scale-75 opacity-0 -translate-x-[110%] pointer-events-none" data-index="3">
@@ -834,8 +839,8 @@
                 <img alt="Bàu Bàng" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="/Bàu Bàng 2.jpg">
               </div>
               <div class="space-y-2">
-                <h4 class="text-xl font-black font-display text-slate-900">Bàu Bàng</h4>
-                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">công nghiệp công nghệ cao, logistics và đô thị công nghiệp thế hệ mới</p>
+                <h4 class="text-2xl font-black font-display text-slate-900">Bàu Bàng</h4>
+                <p class="text-sm sm:text-base text-slate-600 leading-relaxed">công nghiệp công nghệ cao, logistics và đô thị công nghiệp thế hệ mới</p>
               </div>
             </div>
             <div class="satellite-card absolute transition-all duration-500 ease-in-out cursor-pointer w-[300px] sm:w-[380px] bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-lg z-10 scale-90 opacity-60 -translate-x-[70%] sm:-translate-x-[65%] pointer-events-auto" data-index="4">
@@ -843,8 +848,8 @@
                 <img alt="Tân Uyên - Bắc Tân Uyên" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="/Tân Uyên.jpg">
               </div>
               <div class="space-y-2">
-                <h4 class="text-xl font-black font-display text-slate-900">Tân Uyên - Bắc Tân Uyên</h4>
-                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">dịch vụ công nghiệp, logistics, đô thị đại học, đô thị sinh thái dọc Vành đai 4 và ven sông Đồng Nai.</p>
+                <h4 class="text-2xl font-black font-display text-slate-900">Tân Uyên - Bắc Tân Uyên</h4>
+                <p class="text-sm sm:text-base text-slate-600 leading-relaxed">dịch vụ công nghiệp, logistics, đô thị đại học, đô thị sinh thái dọc Vành đai 4 và ven sông Đồng Nai.</p>
               </div>
             </div>
           </div>
@@ -874,14 +879,14 @@
         <!-- 2 Hạt nhân Chiến lược -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
           <div class="p-6 rounded-2xl bg-cobalt text-white shadow-md">
-            <h4 class="text-lg font-black mt-2 mb-1">Thủ Thiêm - An Khánh:</h4>
-            <p class="text-xs text-slate-100 leading-relaxed">
+            <h4 class="text-xl font-black mt-2 mb-1">Thủ Thiêm - An Khánh:</h4>
+            <p class="text-sm text-slate-100 leading-relaxed">
               Trung tâm chính trị - hành chính Thành phố phù hợp với định hướng tại khu vực Thủ Thiêm - An Khánh, bảo đảm thống nhất với vai trò của cực lõi trung tâm quản trị, tài chính và dịch vụ quốc tế.
             </p>
           </div>
           <div class="p-6 rounded-2xl bg-energy text-white shadow-md">
-            <h4 class="text-lg font-black mt-2 mb-1">Rạch Chiếc:</h4>
-            <p class="text-xs text-slate-100 leading-relaxed">
+            <h4 class="text-xl font-black mt-2 mb-1">Rạch Chiếc:</h4>
+            <p class="text-sm text-slate-100 leading-relaxed">
               Phát huy vai trò Rạch Chiếc là trung tâm đô thị thể thao, văn hóa, sáng tạo và giải trí phức hợp tầm cỡ quốc tế.
             </p>
           </div>
@@ -890,15 +895,42 @@
           <span class="w-3 h-3 rounded-full bg-sun shrink-0"></span>
           <h3 class="text-xl sm:text-2xl font-black text-slate-900 font-display">10 vùng quản trị phát triển:</h3>
         </div>
-        <!-- Lưới tương tác 10 Vùng Quản trị -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4 lg:gap-5">
-          <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 hover:border-sun transition-all shadow-sm flex flex-col justify-between">
+        <!-- Trình bày thẻ trên cùng + Thanh mốc 1-10 + Nút qua trái/phải -->
+        <div class="space-y-5 sm:space-y-6" id="zonesCarouselWrapper" tabindex="0">
+          <!-- Dòng line phía trên với các mốc từ 1 đến 10 -->
+          <div class="relative max-w-4xl mx-auto px-1 sm:px-4 pt-1">
+            <div class="relative flex items-center justify-between">
+              <div class="absolute left-3.5 right-3.5 sm:left-5 sm:right-5 top-1/2 -translate-y-1/2 h-[3px] bg-slate-200 rounded-full z-0 overflow-hidden">
+                <div class="h-full bg-sun rounded-full transition-all duration-300" id="zoneTimelineProgress" style="width: 0%;"></div>
+              </div>
+              <button aria-label="Vùng 1" class="zone-milestone relative z-10 w-7 h-7 sm:w-10 sm:h-10 rounded-full border-2 border-amber-500 bg-sun text-slate-950 text-xs sm:text-sm font-black font-display flex items-center justify-center shadow-md ring-4 ring-sun/25 scale-110 transition-all cursor-pointer" data-zone-dot="0" title="1. Vùng lõi đô thị - tài chính - quản trị - di sản" type="button">1</button>
+              <button aria-label="Vùng 2" class="zone-milestone relative z-10 w-7 h-7 sm:w-10 sm:h-10 rounded-full border-2 border-slate-300 bg-white text-slate-600 hover:border-sun hover:text-amber-700 text-xs sm:text-sm font-bold font-display flex items-center justify-center transition-all cursor-pointer" data-zone-dot="1" title="2. Vùng đổi mới sáng tạo phía Đông" type="button">2</button>
+              <button aria-label="Vùng 3" class="zone-milestone relative z-10 w-7 h-7 sm:w-10 sm:h-10 rounded-full border-2 border-slate-300 bg-white text-slate-600 hover:border-sun hover:text-amber-700 text-xs sm:text-sm font-bold font-display flex items-center justify-center transition-all cursor-pointer" data-zone-dot="2" title="3. Vùng Tây - Tây Nam" type="button">3</button>
+              <button aria-label="Vùng 4" class="zone-milestone relative z-10 w-7 h-7 sm:w-10 sm:h-10 rounded-full border-2 border-slate-300 bg-white text-slate-600 hover:border-sun hover:text-amber-700 text-xs sm:text-sm font-bold font-display flex items-center justify-center transition-all cursor-pointer" data-zone-dot="3" title="4. Vùng đô thị công nghiệp - dịch vụ phía Bắc" type="button">4</button>
+              <button aria-label="Vùng 5" class="zone-milestone relative z-10 w-7 h-7 sm:w-10 sm:h-10 rounded-full border-2 border-slate-300 bg-white text-slate-600 hover:border-sun hover:text-amber-700 text-xs sm:text-sm font-bold font-display flex items-center justify-center transition-all cursor-pointer" data-zone-dot="4" title="5. Vùng sinh thái và dự trữ phát triển" type="button">5</button>
+              <button aria-label="Vùng 6" class="zone-milestone relative z-10 w-7 h-7 sm:w-10 sm:h-10 rounded-full border-2 border-slate-300 bg-white text-slate-600 hover:border-sun hover:text-amber-700 text-xs sm:text-sm font-bold font-display flex items-center justify-center transition-all cursor-pointer" data-zone-dot="5" title="6. Vùng phía Tây Bắc và phía Nam" type="button">6</button>
+              <button aria-label="Vùng 7" class="zone-milestone relative z-10 w-7 h-7 sm:w-10 sm:h-10 rounded-full border-2 border-slate-300 bg-white text-slate-600 hover:border-sun hover:text-amber-700 text-xs sm:text-sm font-bold font-display flex items-center justify-center transition-all cursor-pointer" data-zone-dot="6" title="7. Vùng sinh thái biển Cần Giờ" type="button">7</button>
+              <button aria-label="Vùng 8" class="zone-milestone relative z-10 w-7 h-7 sm:w-10 sm:h-10 rounded-full border-2 border-slate-300 bg-white text-slate-600 hover:border-sun hover:text-amber-700 text-xs sm:text-sm font-bold font-display flex items-center justify-center transition-all cursor-pointer" data-zone-dot="7" title="8. Vùng cảng biển - logistics - công nghiệp - năng lượng" type="button">8</button>
+              <button aria-label="Vùng 9" class="zone-milestone relative z-10 w-7 h-7 sm:w-10 sm:h-10 rounded-full border-2 border-slate-300 bg-white text-slate-600 hover:border-sun hover:text-amber-700 text-xs sm:text-sm font-bold font-display flex items-center justify-center transition-all cursor-pointer" data-zone-dot="8" title="9. Vùng du lịch biển Vũng Tàu - Long Hải - Hồ Tràm - Bình Châu" type="button">9</button>
+              <button aria-label="Vùng 10" class="zone-milestone relative z-10 w-7 h-7 sm:w-10 sm:h-10 rounded-full border-2 border-slate-300 bg-white text-slate-600 hover:border-sun hover:text-amber-700 text-xs sm:text-sm font-bold font-display flex items-center justify-center transition-all cursor-pointer" data-zone-dot="9" title="10. Đặc khu Côn Đảo" type="button">10</button>
+            </div>
+          </div>
+
+          <!-- Thẻ div trên cùng với nút điều hướng Trái / Phải -->
+          <div class="flex items-center gap-3 sm:gap-5 max-w-4xl mx-auto">
+            <button aria-label="Vùng trước" class="hidden sm:flex w-11 h-11 lg:w-12 lg:h-12 shrink-0 rounded-full border-2 border-slate-200 bg-white hover:border-sun hover:bg-sun/15 text-slate-700 hover:text-amber-700 items-center justify-center shadow-md transition-all cursor-pointer" id="zonePrevBtn" type="button">
+              <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+            </button>
+            <div class="relative flex-1 min-w-0">
+              <div aria-hidden="true" class="hidden sm:block absolute inset-x-3 -bottom-2.5 h-6 rounded-2xl bg-amber-50/90 border border-sun/40 shadow-sm pointer-events-none"></div>
+              <div class="relative z-10" id="zoneCardsStage">
+          <div class="zone-slide-card p-5 sm:p-6 rounded-2xl bg-white border-2 border-sun/60 transition-all shadow-lg flex flex-col justify-between" data-zone-index="0">
             <div>
               <div class="flex items-start gap-2.5 mb-2 sm:mb-2.5">
-                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-sm sm:text-base font-black font-display text-amber-700 shrink-0 mt-0.5">(1)</span>
-                <h4 class="font-extrabold text-[15px] sm:text-base text-slate-900 leading-snug">Vùng lõi đô thị - tài chính - quản trị - di sản:</h4>
+                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-base sm:text-lg font-black font-display text-amber-700 shrink-0 mt-0.5">1</span>
+                <h4 class="font-extrabold text-base sm:text-lg text-slate-900 leading-snug">Vùng lõi đô thị - tài chính - quản trị - di sản:</h4>
               </div>
-              <p class="text-sm sm:text-[14.5px] text-slate-700 leading-[1.65]">Là trung tâm chính trị, hành chính, tài chính, thương mại, dịch vụ du lịch cao cấp và công viên chuyên đề, văn hóa, lịch sử, giáo dục, y tế và đối ngoại của Thành phố, tập trung tại khu trung tâm đô thị lịch sử hiện hữu, khu vực Sài Gòn - Chợ Lớn - Thủ Thiêm... và hai bờ sông Sài Gòn đoạn trung tâm.</p>
+              <p class="text-base text-slate-700 leading-[1.65]">Là trung tâm chính trị, hành chính, tài chính, thương mại, dịch vụ du lịch cao cấp và công viên chuyên đề, văn hóa, lịch sử, giáo dục, y tế và đối ngoại của Thành phố, tập trung tại khu trung tâm đô thị lịch sử hiện hữu, khu vực Sài Gòn - Chợ Lớn - Thủ Thiêm... và hai bờ sông Sài Gòn đoạn trung tâm.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 mt-3.5 sm:mt-4 pt-3 border-t border-slate-100">
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-sun/10 border border-sun/40">
@@ -906,8 +938,8 @@
                   <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>17.000 - 17.500 ha</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>17.000 - 17.500 ha</div>
                 </div>
               </div>
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-orange-50/90 border border-orange-200/80">
@@ -915,19 +947,19 @@
                   <svg class="w-4 h-4 text-energy" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>5,90 - 6,20 triệu người</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>5,90 - 6,20 triệu người</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 hover:border-sun transition-all shadow-sm flex flex-col justify-between">
+          <div class="zone-slide-card hidden p-5 sm:p-6 rounded-2xl bg-white border-2 border-sun/60 transition-all shadow-lg flex flex-col justify-between" data-zone-index="1">
             <div>
               <div class="flex items-start gap-2.5 mb-2 sm:mb-2.5">
-                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-sm sm:text-base font-black font-display text-amber-700 shrink-0 mt-0.5">(2)</span>
-                <h4 class="font-extrabold text-[15px] sm:text-base text-slate-900 leading-snug">Vùng đổi mới sáng tạo phía Đông:</h4>
+                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-base sm:text-lg font-black font-display text-amber-700 shrink-0 mt-0.5">2</span>
+                <h4 class="font-extrabold text-base sm:text-lg text-slate-900 leading-snug">Vùng đổi mới sáng tạo phía Đông:</h4>
               </div>
-              <p class="text-sm sm:text-[14.5px] text-slate-700 leading-[1.65]">Là vùng đô thị động lực phía Đông Bắc; trung tâm khoa học - công nghệ, giáo dục - đào tạo, đổi mới sáng tạo, công nghiệp công nghệ cao và kinh tế số của Thành phố, đồng thời là đầu mối liên kết với Long Thành và vùng Đông Nam Bộ.</p>
+              <p class="text-base text-slate-700 leading-[1.65]">Là vùng đô thị động lực phía Đông Bắc; trung tâm khoa học - công nghệ, giáo dục - đào tạo, đổi mới sáng tạo, công nghiệp công nghệ cao và kinh tế số của Thành phố, đồng thời là đầu mối liên kết với Long Thành và vùng Đông Nam Bộ.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 mt-3.5 sm:mt-4 pt-3 border-t border-slate-100">
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-sun/10 border border-sun/40">
@@ -935,8 +967,8 @@
                   <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>42.900 - 43.300 ha</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>42.900 - 43.300 ha</div>
                 </div>
               </div>
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-orange-50/90 border border-orange-200/80">
@@ -944,19 +976,19 @@
                   <svg class="w-4 h-4 text-energy" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>4,98 - 5,25 triệu người</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>4,98 - 5,25 triệu người</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 hover:border-sun transition-all shadow-sm flex flex-col justify-between">
+          <div class="zone-slide-card hidden p-5 sm:p-6 rounded-2xl bg-white border-2 border-sun/60 transition-all shadow-lg flex flex-col justify-between" data-zone-index="2">
             <div>
               <div class="flex items-start gap-2.5 mb-2 sm:mb-2.5">
-                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-sm sm:text-base font-black font-display text-amber-700 shrink-0 mt-0.5">(3)</span>
-                <h4 class="font-extrabold text-[15px] sm:text-base text-slate-900 leading-snug">Vùng Tây - Tây Nam:</h4>
+                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-base sm:text-lg font-black font-display text-amber-700 shrink-0 mt-0.5">3</span>
+                <h4 class="font-extrabold text-base sm:text-lg text-slate-900 leading-snug">Vùng Tây - Tây Nam:</h4>
               </div>
-              <p class="text-sm sm:text-[14.5px] text-slate-700 leading-[1.65]">Là cửa ngõ kết nối Thành phố với Đồng bằng sông Cửu Long; phát triển các chức năng logistics, thương mại, công nghiệp đảm bảo các tiêu chí môi trường đô thị, y sinh, y tế, giáo dục - đào tạo, dịch vụ và đô thị sinh thái.</p>
+              <p class="text-base text-slate-700 leading-[1.65]">Là cửa ngõ kết nối Thành phố với Đồng bằng sông Cửu Long; phát triển các chức năng logistics, thương mại, công nghiệp đảm bảo các tiêu chí môi trường đô thị, y sinh, y tế, giáo dục - đào tạo, dịch vụ và đô thị sinh thái.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 mt-3.5 sm:mt-4 pt-3 border-t border-slate-100">
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-sun/10 border border-sun/40">
@@ -964,8 +996,8 @@
                   <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>83.200 - 83.600 ha</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>83.200 - 83.600 ha</div>
                 </div>
               </div>
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-orange-50/90 border border-orange-200/80">
@@ -973,19 +1005,19 @@
                   <svg class="w-4 h-4 text-energy" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>5,79 - 6,09 triệu người</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>5,79 - 6,09 triệu người</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 hover:border-sun transition-all shadow-sm flex flex-col justify-between">
+          <div class="zone-slide-card hidden p-5 sm:p-6 rounded-2xl bg-white border-2 border-sun/60 transition-all shadow-lg flex flex-col justify-between" data-zone-index="3">
             <div>
               <div class="flex items-start gap-2.5 mb-2 sm:mb-2.5">
-                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-sm sm:text-base font-black font-display text-amber-700 shrink-0 mt-0.5">(4)</span>
-                <h4 class="font-extrabold text-[15px] sm:text-base text-slate-900 leading-snug">Vùng đô thị công nghiệp - dịch vụ phía Bắc:</h4>
+                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-base sm:text-lg font-black font-display text-amber-700 shrink-0 mt-0.5">4</span>
+                <h4 class="font-extrabold text-base sm:text-lg text-slate-900 leading-snug">Vùng đô thị công nghiệp - dịch vụ phía Bắc:</h4>
               </div>
-              <p class="text-sm sm:text-[14.5px] text-slate-700 leading-[1.65]">Là hậu phương sản xuất hiện đại và cửa ngõ liên kết vùng phía Bắc của Thành phố; tập trung công nghiệp công nghệ cao, công nghệ tiên tiến, công nghiệp xanh, logistics, dịch vụ kỹ thuật, đô thị thông minh và đào tạo nhân lực.</p>
+              <p class="text-base text-slate-700 leading-[1.65]">Là hậu phương sản xuất hiện đại và cửa ngõ liên kết vùng phía Bắc của Thành phố; tập trung công nghiệp công nghệ cao, công nghệ tiên tiến, công nghiệp xanh, logistics, dịch vụ kỹ thuật, đô thị thông minh và đào tạo nhân lực.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 mt-3.5 sm:mt-4 pt-3 border-t border-slate-100">
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-sun/10 border border-sun/40">
@@ -993,8 +1025,8 @@
                   <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>160.000 - 160.400 ha</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>160.000 - 160.400 ha</div>
                 </div>
               </div>
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-orange-50/90 border border-orange-200/80">
@@ -1002,19 +1034,19 @@
                   <svg class="w-4 h-4 text-energy" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>3,10 - 3,26 triệu người</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>3,10 - 3,26 triệu người</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 hover:border-sun transition-all shadow-sm flex flex-col justify-between">
+          <div class="zone-slide-card hidden p-5 sm:p-6 rounded-2xl bg-white border-2 border-sun/60 transition-all shadow-lg flex flex-col justify-between" data-zone-index="4">
             <div>
               <div class="flex items-start gap-2.5 mb-2 sm:mb-2.5">
-                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-sm sm:text-base font-black font-display text-amber-700 shrink-0 mt-0.5">(5)</span>
-                <h4 class="font-extrabold text-[15px] sm:text-base text-slate-900 leading-snug">Vùng sinh thái và dự trữ phát triển:</h4>
+                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-base sm:text-lg font-black font-display text-amber-700 shrink-0 mt-0.5">5</span>
+                <h4 class="font-extrabold text-base sm:text-lg text-slate-900 leading-snug">Vùng sinh thái và dự trữ phát triển:</h4>
               </div>
-              <p class="text-sm sm:text-[14.5px] text-slate-700 leading-[1.65]">gồm tiểu vùng ở phía Bắc, Tây Bắc và tiểu vùng phía Đông Nam Thành phố là vùng cân bằng sinh thái; bảo vệ nguồn nước, rừng, đa dạng sinh học, nông nghiệp công nghệ cao; và quỹ đất dự trữ dài hạn của Thành phố.</p>
+              <p class="text-base text-slate-700 leading-[1.65]">gồm tiểu vùng ở phía Bắc, Tây Bắc và tiểu vùng phía Đông Nam Thành phố là vùng cân bằng sinh thái; bảo vệ nguồn nước, rừng, đa dạng sinh học, nông nghiệp công nghệ cao; và quỹ đất dự trữ dài hạn của Thành phố.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 mt-3.5 sm:mt-4 pt-3 border-t border-slate-100">
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-sun/10 border border-sun/40">
@@ -1022,8 +1054,8 @@
                   <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>130.200 - 131.000 ha</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>130.200 - 131.000 ha</div>
                 </div>
               </div>
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-orange-50/90 border border-orange-200/80">
@@ -1031,19 +1063,19 @@
                   <svg class="w-4 h-4 text-energy" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>0,84 - 0,98 triệu người</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>0,84 - 0,98 triệu người</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 hover:border-sun transition-all shadow-sm flex flex-col justify-between">
+          <div class="zone-slide-card hidden p-5 sm:p-6 rounded-2xl bg-white border-2 border-sun/60 transition-all shadow-lg flex flex-col justify-between" data-zone-index="5">
             <div>
               <div class="flex items-start gap-2.5 mb-2 sm:mb-2.5">
-                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-sm sm:text-base font-black font-display text-amber-700 shrink-0 mt-0.5">(6)</span>
-                <h4 class="font-extrabold text-[15px] sm:text-base text-slate-900 leading-snug">Vùng phía Tây Bắc và phía Nam:</h4>
+                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-base sm:text-lg font-black font-display text-amber-700 shrink-0 mt-0.5">6</span>
+                <h4 class="font-extrabold text-base sm:text-lg text-slate-900 leading-snug">Vùng phía Tây Bắc và phía Nam:</h4>
               </div>
-              <p class="text-sm sm:text-[14.5px] text-slate-700 leading-[1.65]">gồm tiểu vùng phía Tây Bắc Hóc Môn - Củ Chi kết nối với cửa ngõ phía Tây Bắc của đô thị trung tâm và tiểu vùng phía Nam Nhà Bè - Hiệp Phước kết nối với cửa ngõ phía Nam của đô thị trung tâm.</p>
+              <p class="text-base text-slate-700 leading-[1.65]">gồm tiểu vùng phía Tây Bắc Hóc Môn - Củ Chi kết nối với cửa ngõ phía Tây Bắc của đô thị trung tâm và tiểu vùng phía Nam Nhà Bè - Hiệp Phước kết nối với cửa ngõ phía Nam của đô thị trung tâm.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 mt-3.5 sm:mt-4 pt-3 border-t border-slate-100">
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-sun/10 border border-sun/40">
@@ -1051,8 +1083,8 @@
                   <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>18.100 - 18.500 ha</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>18.100 - 18.500 ha</div>
                 </div>
               </div>
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-orange-50/90 border border-orange-200/80">
@@ -1060,19 +1092,19 @@
                   <svg class="w-4 h-4 text-energy" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>2,17 - 2,28 triệu người</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>2,17 - 2,28 triệu người</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 hover:border-sun transition-all shadow-sm flex flex-col justify-between">
+          <div class="zone-slide-card hidden p-5 sm:p-6 rounded-2xl bg-white border-2 border-sun/60 transition-all shadow-lg flex flex-col justify-between" data-zone-index="6">
             <div>
               <div class="flex items-start gap-2.5 mb-2 sm:mb-2.5">
-                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-sm sm:text-base font-black font-display text-amber-700 shrink-0 mt-0.5">(7)</span>
-                <h4 class="font-extrabold text-[15px] sm:text-base text-slate-900 leading-snug">Vùng sinh thái biển Cần Giờ:</h4>
+                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-base sm:text-lg font-black font-display text-amber-700 shrink-0 mt-0.5">7</span>
+                <h4 class="font-extrabold text-base sm:text-lg text-slate-900 leading-snug">Vùng sinh thái biển Cần Giờ:</h4>
               </div>
-              <p class="text-sm sm:text-[14.5px] text-slate-700 leading-[1.65]">Là không gian sinh thái biển đặc thù, cửa ngõ hướng biển và trung tâm kinh tế biển của Thành phố, gắn với rừng ngập mặn, du lịch sinh thái, nghỉ dưỡng, kinh tế biển, cảng, logistics, hậu cần nghề cá và nghiên cứu biển.</p>
+              <p class="text-base text-slate-700 leading-[1.65]">Là không gian sinh thái biển đặc thù, cửa ngõ hướng biển và trung tâm kinh tế biển của Thành phố, gắn với rừng ngập mặn, du lịch sinh thái, nghỉ dưỡng, kinh tế biển, cảng, logistics, hậu cần nghề cá và nghiên cứu biển.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 mt-3.5 sm:mt-4 pt-3 border-t border-slate-100">
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-sun/10 border border-sun/40">
@@ -1080,8 +1112,8 @@
                   <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>71.900 - 72.300 ha</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>71.900 - 72.300 ha</div>
                 </div>
               </div>
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-orange-50/90 border border-orange-200/80">
@@ -1089,19 +1121,19 @@
                   <svg class="w-4 h-4 text-energy" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>0,56 - 0,59 triệu người</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>0,56 - 0,59 triệu người</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 hover:border-sun transition-all shadow-sm flex flex-col justify-between">
+          <div class="zone-slide-card hidden p-5 sm:p-6 rounded-2xl bg-white border-2 border-sun/60 transition-all shadow-lg flex flex-col justify-between" data-zone-index="7">
             <div>
               <div class="flex items-start gap-2.5 mb-2 sm:mb-2.5">
-                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-sm sm:text-base font-black font-display text-amber-700 shrink-0 mt-0.5">(8)</span>
-                <h4 class="font-extrabold text-[15px] sm:text-base text-slate-900 leading-snug">Vùng cảng biển - logistics - công nghiệp - năng lượng:</h4>
+                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-base sm:text-lg font-black font-display text-amber-700 shrink-0 mt-0.5">8</span>
+                <h4 class="font-extrabold text-base sm:text-lg text-slate-900 leading-snug">Vùng cảng biển - logistics - công nghiệp - năng lượng:</h4>
               </div>
-              <p class="text-sm sm:text-[14.5px] text-slate-700 leading-[1.65]">Là vùng động lực kinh tế phía Đông Nam, cửa ngõ giao thương quốc tế và trung tâm liên kết chuỗi sản xuất - logistics - cảng biển của Thành phố với vùng Đông Nam Bộ, và mạng lưới kinh tế quốc tế.</p>
+              <p class="text-base text-slate-700 leading-[1.65]">Là vùng động lực kinh tế phía Đông Nam, cửa ngõ giao thương quốc tế và trung tâm liên kết chuỗi sản xuất - logistics - cảng biển của Thành phố với vùng Đông Nam Bộ, và mạng lưới kinh tế quốc tế.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 mt-3.5 sm:mt-4 pt-3 border-t border-slate-100">
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-sun/10 border border-sun/40">
@@ -1109,8 +1141,8 @@
                   <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>99.400 - 99.800 ha</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>99.400 - 99.800 ha</div>
                 </div>
               </div>
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-orange-50/90 border border-orange-200/80">
@@ -1118,19 +1150,19 @@
                   <svg class="w-4 h-4 text-energy" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>1,11 - 1,34 triệu người</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>1,11 - 1,34 triệu người</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 hover:border-sun transition-all shadow-sm flex flex-col justify-between">
+          <div class="zone-slide-card hidden p-5 sm:p-6 rounded-2xl bg-white border-2 border-sun/60 transition-all shadow-lg flex flex-col justify-between" data-zone-index="8">
             <div>
               <div class="flex items-start gap-2.5 mb-2 sm:mb-2.5">
-                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-sm sm:text-base font-black font-display text-amber-700 shrink-0 mt-0.5">(9)</span>
-                <h4 class="font-extrabold text-[15px] sm:text-base text-slate-900 leading-snug">Vùng du lịch biển Vũng Tàu - Long Hải - Hồ Tràm - Bình Châu:</h4>
+                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-base sm:text-lg font-black font-display text-amber-700 shrink-0 mt-0.5">9</span>
+                <h4 class="font-extrabold text-base sm:text-lg text-slate-900 leading-snug">Vùng du lịch biển Vũng Tàu - Long Hải - Hồ Tràm - Bình Châu:</h4>
               </div>
-              <p class="text-sm sm:text-[14.5px] text-slate-700 leading-[1.65]">Là vùng đô thị - du lịch - dịch vụ biển và sinh thái ven biển trọng điểm, giữ vai trò cửa ngõ du lịch hướng biển và trung tâm nghỉ dưỡng, vui chơi giải trí, chăm sóc sức khỏe và kinh tế biển của Thành phố.</p>
+              <p class="text-base text-slate-700 leading-[1.65]">Là vùng đô thị - du lịch - dịch vụ biển và sinh thái ven biển trọng điểm, giữ vai trò cửa ngõ du lịch hướng biển và trung tâm nghỉ dưỡng, vui chơi giải trí, chăm sóc sức khỏe và kinh tế biển của Thành phố.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 mt-3.5 sm:mt-4 pt-3 border-t border-slate-100">
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-sun/10 border border-sun/40">
@@ -1138,8 +1170,8 @@
                   <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>45.700 - 46.100 ha</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>45.700 - 46.100 ha</div>
                 </div>
               </div>
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-orange-50/90 border border-orange-200/80">
@@ -1147,19 +1179,19 @@
                   <svg class="w-4 h-4 text-energy" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>0,99 - 1,05 triệu người</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>0,99 - 1,05 triệu người</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 hover:border-sun transition-all shadow-sm flex flex-col justify-between">
+          <div class="zone-slide-card hidden p-5 sm:p-6 rounded-2xl bg-white border-2 border-sun/60 transition-all shadow-lg flex flex-col justify-between" data-zone-index="9">
             <div>
               <div class="flex items-start gap-2.5 mb-2 sm:mb-2.5">
-                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-sm sm:text-base font-black font-display text-amber-700 shrink-0 mt-0.5">(10)</span>
-                <h4 class="font-extrabold text-[15px] sm:text-base text-slate-900 leading-snug">Đặc khu Côn Đảo:</h4>
+                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-lg bg-sun/20 border border-sun/40 text-base sm:text-lg font-black font-display text-amber-700 shrink-0 mt-0.5">10</span>
+                <h4 class="font-extrabold text-base sm:text-lg text-slate-900 leading-snug">Đặc khu Côn Đảo:</h4>
               </div>
-              <p class="text-sm sm:text-[14.5px] text-slate-700 leading-[1.65]">Là không gian biển đảo đặc thù, kết hợp đô thị sinh thái - di sản - du lịch - quốc phòng, an ninh, kết hợp du lịch trải nghiệm phát huy văn hóa địa phương, có vai trò là điểm đến du lịch văn hóa, lịch sử có ý nghĩa quốc gia và định hướng vươn tầm quốc tế.</p>
+              <p class="text-base text-slate-700 leading-[1.65]">Là không gian biển đảo đặc thù, kết hợp đô thị sinh thái - di sản - du lịch - quốc phòng, an ninh, kết hợp du lịch trải nghiệm phát huy văn hóa địa phương, có vai trò là điểm đến du lịch văn hóa, lịch sử có ý nghĩa quốc gia và định hướng vươn tầm quốc tế.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 mt-3.5 sm:mt-4 pt-3 border-t border-slate-100">
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-sun/10 border border-sun/40">
@@ -1167,8 +1199,8 @@
                   <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>7.500 - 8.100 ha</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Quy mô diện tích khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-amber-700 tabular-nums leading-tight mt-0.5" data-countup>7.500 - 8.100 ha</div>
                 </div>
               </div>
               <div class="flex items-center gap-3 sm:gap-2.5 px-3 py-2.5 sm:p-2.5 rounded-xl bg-orange-50/90 border border-orange-200/80">
@@ -1176,12 +1208,62 @@
                   <svg class="w-4 h-4 text-energy" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 </div>
                 <div class="min-w-0">
-                  <div class="text-[11px] font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
-                  <div class="text-[15px] sm:text-base font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>0,065 - 0,07 triệu người</div>
+                  <div class="text-xs font-bold text-slate-500 leading-tight">Dân số dự kiến khoảng</div>
+                  <div class="text-base sm:text-lg font-black font-display text-energy tabular-nums leading-tight mt-0.5" data-countup>0,065 - 0,07 triệu người</div>
                 </div>
               </div>
             </div>
           </div>
+              </div>
+            </div>
+            <button aria-label="Vùng tiếp theo" class="hidden sm:flex w-11 h-11 lg:w-12 lg:h-12 shrink-0 rounded-full border-2 border-slate-200 bg-white hover:border-sun hover:bg-sun/15 text-slate-700 hover:text-amber-700 items-center justify-center shadow-md transition-all cursor-pointer" id="zoneNextBtn" type="button">
+              <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+            </button>
+          </div>
+
+          <!-- Điều hướng Mobile (Trái / Mốc hiện tại / Phải) -->
+          <div class="flex sm:hidden items-center justify-between gap-3 pt-1">
+            <button aria-label="Vùng trước" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border-2 border-slate-200 bg-white hover:border-sun hover:bg-sun/15 text-slate-700 font-bold text-sm shadow-sm transition-all" id="zonePrevBtnMobile" type="button">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+              <span>Trước</span>
+            </button>
+            <span class="text-sm font-black font-display text-amber-700 bg-sun/15 border border-sun/40 px-3.5 py-1 rounded-full tabular-nums" id="zoneCounterMobile">1 / 10</span>
+            <button aria-label="Vùng tiếp theo" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border-2 border-slate-200 bg-white hover:border-sun hover:bg-sun/15 text-slate-700 font-bold text-sm shadow-sm transition-all" id="zoneNextBtnMobile" type="button">
+              <span>Tiếp</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+            </button>
+          </div>
+<!-- Khung Ảnh Kết bài (Full-width Editorial Banner) -->
+      <div class="auto-photo-slideshow relative w-full rounded-3xl overflow-hidden shadow-2xl bg-slate-950 mb-4 group h-[480px] sm:h-[600px] lg:h-[720px] select-none" id="autoPhotoSlideshow">
+        <div class="absolute inset-0 w-full h-full">
+          <div class="slideshow-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-100 z-10 pointer-events-auto">
+            <img alt="TPHCM 1" class="w-full h-full object-cover object-center" src="/TPHCM-1.jpg">
+          </div>
+          <div class="slideshow-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0 pointer-events-none">
+            <img alt="TPHCM 2" class="w-full h-full object-cover object-center" src="/TPHCM-2.jpg">
+          </div>
+          <div class="slideshow-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0 pointer-events-none">
+            <img alt="TPHCM 3" class="w-full h-full object-cover object-center" src="/TPHCM-3.jpg">
+          </div>
+          <div class="slideshow-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0 pointer-events-none">
+            <img alt="TPHCM 4" class="w-full h-full object-cover object-center" src="/TPHCM-4.jpg">
+          </div>
+        </div>
+        <button aria-label="Previous image" class="slideshow-prev-btn absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-slate-900/40 hover:bg-slate-900/80 backdrop-blur-md text-white border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg" id="autoSlidePrevBtn" type="button">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </button>
+        <button aria-label="Next image" class="slideshow-next-btn absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-slate-900/40 hover:bg-slate-900/80 backdrop-blur-md text-white border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg" id="autoSlideNextBtn" type="button">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </button>
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 shadow-md" id="slideshowDots">
+          <button aria-label="Slide 1" class="auto-slide-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white scale-125" data-slide="0" type="button"></button>
+          <button aria-label="Slide 2" class="auto-slide-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/80" data-slide="1" type="button"></button>
+          <button aria-label="Slide 3" class="auto-slide-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/80" data-slide="2" type="button"></button>
+          <button aria-label="Slide 4" class="auto-slide-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/80" data-slide="3" type="button"></button>
+          
+        </div>
+      </div>
+
         </div>
       </div>
     </section>
@@ -1229,7 +1311,7 @@
                 </svg>
               </div>
               <div aria-hidden="true" class="w-24 sm:w-32 h-[3px] rounded-full mb-3 anim-divider" style="background-image: linear-gradient(90deg, transparent, #EA580C, #FB923C, #EA580C, transparent);"></div>
-              <h3 class="text-3xl sm:text-4xl leading-tight font-black text-orange-600 font-display text-center">Giao thông đa phương thức, ưu tiên metro, đường sắt liên vùng &amp; TOD</h3>
+              <h3 class="text-3xl sm:text-4xl leading-tight font-black text-orange-600 font-display text-center">Giao thông đa phương thức, ưu tiên metro, đường sắt liên vùng và giao thông công cộng gắn với mô hình TOD</h3>
             </div>
             <div class="text-base text-slate-700 leading-relaxed space-y-3">
               <p>Mạng lưới giao thông phát triển đa phương thức, các tuyến kết nối cảng biển - sân bay - khu công nghiệp - trung tâm logistics.</p>
@@ -1309,11 +1391,11 @@
               <path class="text-slate-100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
               <path class="text-energy" data-ring-anim data-ring-target="10" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="10, 100" stroke-width="3.5"></path>
             </svg>
-            <div class="absolute inset-0 flex items-center justify-center font-black text-xs text-energy tabular-nums" data-countup>≥6%</div>
+            <div class="absolute inset-0 flex items-center justify-center font-black text-sm text-energy tabular-nums" data-countup>≥6%</div>
           </div>
           <div>
-            <div class="text-2xl sm:text-3xl font-black font-display text-energy huge-num tabular-nums" data-countup>≥ 6%</div>
-            <div class="text-xs font-bold text-slate-700 mt-1">Tỷ lệ đất giao thông đô thị tối thiểu 6%.</div>
+            <div class="text-3xl sm:text-4xl leading-tight font-black font-display text-energy huge-num tabular-nums" data-countup>≥ 6%</div>
+            <div class="text-sm font-bold text-slate-700 mt-1">Tỷ lệ đất giao thông đô thị tối thiểu 6%.</div>
           </div>
         </div>
         <!-- 2. Nước sạch -->
@@ -1322,11 +1404,11 @@
             <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
               <path class="text-ice" data-ring-anim data-ring-target="100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="100, 100" stroke-width="3.5"></path>
             </svg>
-            <div class="absolute inset-0 flex items-center justify-center font-black text-xs text-ice tabular-nums" data-countup>100%</div>
+            <div class="absolute inset-0 flex items-center justify-center font-black text-sm text-ice tabular-nums" data-countup>100%</div>
           </div>
           <div>
-            <div class="text-2xl sm:text-3xl font-black font-display text-ice huge-num tabular-nums" data-countup>100%</div>
-            <div class="text-xs font-bold text-slate-700 mt-1">100% dân số được cấp nước sạch;</div>
+            <div class="text-3xl sm:text-4xl leading-tight font-black font-display text-ice huge-num tabular-nums" data-countup>100%</div>
+            <div class="text-sm font-bold text-slate-700 mt-1">100% dân số được cấp nước sạch;</div>
           </div>
         </div>
         <!-- 3. Nước thải -->
@@ -1336,11 +1418,11 @@
               <path class="text-slate-100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
               <path class="text-sun" data-ring-anim data-ring-target="80" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="80, 100" stroke-width="3.5"></path>
             </svg>
-            <div class="absolute inset-0 flex items-center justify-center font-black text-xs text-sun tabular-nums" data-countup>~80%</div>
+            <div class="absolute inset-0 flex items-center justify-center font-black text-sm text-sun tabular-nums" data-countup>~80%</div>
           </div>
           <div>
-            <div class="text-2xl sm:text-3xl font-black font-display text-sun huge-num tabular-nums" data-countup>~80%</div>
-            <div class="text-xs font-bold text-slate-700 mt-1">Thu gom và xử lý nước thải đô thị đạt khoảng 80%.</div>
+            <div class="text-3xl sm:text-4xl leading-tight font-black font-display text-sun huge-num tabular-nums" data-countup>~80%</div>
+            <div class="text-sm font-bold text-slate-700 mt-1">Thu gom và xử lý nước thải đô thị đạt khoảng 80%.</div>
           </div>
         </div>
         <!-- 4. Rác thải rắn -->
@@ -1349,51 +1431,39 @@
             <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
               <path class="text-mint" data-ring-anim data-ring-target="97" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="97, 100" stroke-width="3.5"></path>
             </svg>
-            <div class="absolute inset-0 flex items-center justify-center font-black text-[10px] text-mint"></div>
+            <div class="absolute inset-0 flex items-center justify-center font-black text-xs text-mint"></div>
           </div>
           <div>
-            <div class="text-xl sm:text-2xl font-black font-display text-mint huge-num tabular-nums" data-countup>100% | ~95%</div>
-            <div class="text-xs font-bold text-slate-700 mt-1">Thu gom, xử lý chất thải rắn đạt 100% ở đô thị và khoảng 95% ở nông thôn.</div>
+            <div class="text-2xl sm:text-3xl leading-tight font-black font-display text-mint huge-num tabular-nums" data-countup>100% | ~95%</div>
+            <div class="text-sm font-bold text-slate-700 mt-1">Thu gom, xử lý chất thải rắn đạt 100% ở đô thị và khoảng 95% ở nông thôn.</div>
           </div>
         </div>
         <!-- 5. Diện tích sàn nhà ở -->
         <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-md flex items-center gap-5">
-          <div class="w-20 h-20 rounded-2xl bg-cobalt/10 flex items-center justify-center text-3xl shrink-0">
+          <div class="w-20 h-20 rounded-2xl bg-cobalt/10 flex items-center justify-center text-4xl shrink-0">
             🏡
           </div>
           <div>
-            <div class="text-2xl sm:text-3xl font-black font-display text-cobalt huge-num tabular-nums" data-countup>40 m²/người</div>
-            <div class="text-xs font-bold text-slate-700 mt-1">Nhà ở: Phấn đấu diện tích sàn nhà ở bình quân đạt khoảng 40 m²/người;</div>
+            <div class="text-3xl sm:text-4xl leading-tight font-black font-display text-cobalt huge-num tabular-nums" data-countup>40 m²/người</div>
+            <div class="text-sm font-bold text-slate-700 mt-1">Nhà ở: Phấn đấu diện tích sàn nhà ở bình quân đạt khoảng 40 m²/người;</div>
           </div>
         </div>
         <!-- 6. Quy mô giường bệnh -->
         <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-md flex items-center gap-5">
-          <div class="w-20 h-20 rounded-2xl bg-energy/10 flex items-center justify-center text-3xl shrink-0">
+          <div class="w-20 h-20 rounded-2xl bg-energy/10 flex items-center justify-center text-4xl shrink-0">
             🏥
           </div>
           <div>
-            <div class="text-2xl sm:text-3xl font-black font-display text-energy huge-num tabular-nums" data-countup>40 - 50 giường</div>
-            <div class="text-xs font-bold text-slate-700 mt-1">Quy mô giường bệnh khoảng 40 - 50 giường/10.000 dân</div>
+            <div class="text-3xl sm:text-4xl leading-tight font-black font-display text-energy huge-num tabular-nums" data-countup>40 - 50 giường</div>
+            <div class="text-sm font-bold text-slate-700 mt-1">Quy mô giường bệnh khoảng 40 - 50 giường/10.000 dân</div>
           </div>
         </div>
       </div>
 
       <!-- Khung Ảnh Kết bài (Full-width Editorial Banner) -->
-      <div class="relative w-full rounded-3xl overflow-hidden shadow-2xl bg-slate-950 mb-4 group h-[480px] sm:h-[600px] lg:h-[720px] select-none" id="autoPhotoSlideshow">
+      <div class="auto-photo-slideshow relative w-full rounded-3xl overflow-hidden shadow-2xl bg-slate-950 mb-4 group h-[480px] sm:h-[600px] lg:h-[720px] select-none" id="autoPhotoSlideshowPart8">
         <div class="absolute inset-0 w-full h-full">
           <div class="slideshow-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-100 z-10 pointer-events-auto">
-            <img alt="TPHCM 1" class="w-full h-full object-cover object-center" src="/TPHCM-1.jpg">
-          </div>
-          <div class="slideshow-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0 pointer-events-none">
-            <img alt="TPHCM 2" class="w-full h-full object-cover object-center" src="/TPHCM-2.jpg">
-          </div>
-          <div class="slideshow-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0 pointer-events-none">
-            <img alt="TPHCM 3" class="w-full h-full object-cover object-center" src="/TPHCM-3.jpg">
-          </div>
-          <div class="slideshow-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0 pointer-events-none">
-            <img alt="TPHCM 4" class="w-full h-full object-cover object-center" src="/TPHCM-4.jpg">
-          </div>
-          <div class="slideshow-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0 pointer-events-none">
             <img alt="TPHCM 5" class="w-full h-full object-cover object-center" src="/TPHCM-5.jpg">
           </div>
           <div class="slideshow-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0 pointer-events-none">
@@ -1406,21 +1476,17 @@
             <img alt="TPHCM 8" class="w-full h-full object-cover object-center" src="/TPHCM-8.jpg">
           </div>
         </div>
-        <button aria-label="Previous image" class="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-slate-900/40 hover:bg-slate-900/80 backdrop-blur-md text-white border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg" id="autoSlidePrevBtn" type="button">
+        <button aria-label="Previous image" class="slideshow-prev-btn absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-slate-900/40 hover:bg-slate-900/80 backdrop-blur-md text-white border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg" id="autoSlidePrevBtnPart8" type="button">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
         </button>
-        <button aria-label="Next image" class="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-slate-900/40 hover:bg-slate-900/80 backdrop-blur-md text-white border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg" id="autoSlideNextBtn" type="button">
+        <button aria-label="Next image" class="slideshow-next-btn absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-slate-900/40 hover:bg-slate-900/80 backdrop-blur-md text-white border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg" id="autoSlideNextBtnPart8" type="button">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
         </button>
-        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 shadow-md" id="slideshowDots">
-          <button aria-label="Slide 1" class="auto-slide-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white scale-125" data-slide="0" type="button"></button>
-          <button aria-label="Slide 2" class="auto-slide-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/80" data-slide="1" type="button"></button>
-          <button aria-label="Slide 3" class="auto-slide-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/80" data-slide="2" type="button"></button>
-          <button aria-label="Slide 4" class="auto-slide-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/80" data-slide="3" type="button"></button>
-          <button aria-label="Slide 5" class="auto-slide-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/80" data-slide="4" type="button"></button>
-          <button aria-label="Slide 6" class="auto-slide-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/80" data-slide="5" type="button"></button>
-          <button aria-label="Slide 7" class="auto-slide-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/80" data-slide="6" type="button"></button>
-          <button aria-label="Slide 8" class="auto-slide-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/80" data-slide="7" type="button"></button>
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 shadow-md" id="slideshowDotsPart8">
+          <button aria-label="Slide 5" class="auto-slide-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white scale-125" data-slide="0" type="button"></button>
+          <button aria-label="Slide 6" class="auto-slide-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/80" data-slide="1" type="button"></button>
+          <button aria-label="Slide 7" class="auto-slide-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/80" data-slide="2" type="button"></button>
+          <button aria-label="Slide 8" class="auto-slide-dot w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/80" data-slide="3" type="button"></button>
         </div>
       </div>
     </section>
@@ -2045,12 +2111,119 @@
       }
       updateSatellite3DCarousel();
 
-      // 9. Part 8 Auto Photo Slideshow
-      const slideshowContainer = document.getElementById('autoPhotoSlideshow');
-      if (slideshowContainer) {
+      // 8.5 Part 6.3 10 Governance Zones Carousel with 1-10 Timeline
+      const zonesCarouselWrapper = document.getElementById('zonesCarouselWrapper');
+      if (zonesCarouselWrapper) {
+        const zoneCards = zonesCarouselWrapper.querySelectorAll('.zone-slide-card');
+        const zoneMilestones = zonesCarouselWrapper.querySelectorAll('.zone-milestone');
+        const zoneProgressLine = document.getElementById('zoneTimelineProgress');
+        const zoneCounterMobile = document.getElementById('zoneCounterMobile');
+        const totalZones = zoneCards.length;
+        let activeZoneIdx = 0;
+
+        const setActiveZone = (nextIdx, direction = 1, shouldAnimateNumbers = true) => {
+          if (totalZones === 0) return;
+          const normalizedIdx = ((nextIdx % totalZones) + totalZones) % totalZones;
+          activeZoneIdx = normalizedIdx;
+
+          if (zoneProgressLine && totalZones > 1) {
+            zoneProgressLine.style.width = ((normalizedIdx / (totalZones - 1)) * 100) + '%';
+          }
+          if (zoneCounterMobile) {
+            zoneCounterMobile.textContent = (normalizedIdx + 1) + ' / ' + totalZones;
+          }
+
+          zoneMilestones.forEach((btn, idx) => {
+            if (idx === normalizedIdx) {
+              btn.className = 'zone-milestone relative z-10 w-7 h-7 sm:w-10 sm:h-10 rounded-full border-2 border-amber-500 bg-sun text-slate-950 text-xs sm:text-sm font-black font-display flex items-center justify-center shadow-md ring-4 ring-sun/25 scale-110 transition-all cursor-pointer';
+              btn.setAttribute('aria-current', 'step');
+            } else if (idx < normalizedIdx) {
+              btn.className = 'zone-milestone relative z-10 w-7 h-7 sm:w-10 sm:h-10 rounded-full border-2 border-sun bg-amber-100 text-amber-800 hover:bg-sun/40 text-xs sm:text-sm font-bold font-display flex items-center justify-center transition-all cursor-pointer';
+              btn.removeAttribute('aria-current');
+            } else {
+              btn.className = 'zone-milestone relative z-10 w-7 h-7 sm:w-10 sm:h-10 rounded-full border-2 border-slate-300 bg-white text-slate-600 hover:border-sun hover:text-amber-700 text-xs sm:text-sm font-bold font-display flex items-center justify-center transition-all cursor-pointer';
+              btn.removeAttribute('aria-current');
+            }
+          });
+
+          zoneCards.forEach((card, idx) => {
+            card.classList.remove('zone-enter-right', 'zone-enter-left');
+            if (idx === normalizedIdx) {
+              card.classList.remove('hidden');
+              void card.offsetWidth;
+              card.classList.add(direction >= 0 ? 'zone-enter-right' : 'zone-enter-left');
+              if (shouldAnimateNumbers) {
+                card.querySelectorAll('[data-countup]').forEach((el) => {
+                  const target = el.dataset.countTarget || el.textContent.trim();
+                  if (target) animateCountUpElement(el, target, 650);
+                });
+              }
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+        };
+
+        const goPrevZone = () => setActiveZone(activeZoneIdx - 1, -1, true);
+        const goNextZone = () => setActiveZone(activeZoneIdx + 1, 1, true);
+
+        ['zonePrevBtn', 'zonePrevBtnMobile'].forEach((id) => {
+          const btn = document.getElementById(id);
+          if (btn) btn.addEventListener('click', goPrevZone);
+        });
+        ['zoneNextBtn', 'zoneNextBtnMobile'].forEach((id) => {
+          const btn = document.getElementById(id);
+          if (btn) btn.addEventListener('click', goNextZone);
+        });
+
+        zoneMilestones.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const idx = parseInt(btn.getAttribute('data-zone-dot'), 10);
+            if (!isNaN(idx) && idx !== activeZoneIdx) {
+              setActiveZone(idx, idx > activeZoneIdx ? 1 : -1, true);
+            }
+          });
+        });
+
+        zonesCarouselWrapper.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            goPrevZone();
+          } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            goNextZone();
+          }
+        });
+
+        let touchStartX = 0;
+        const zoneStage = document.getElementById('zoneCardsStage');
+        if (zoneStage) {
+          zoneStage.addEventListener('touchstart', (e) => {
+            if (e.changedTouches && e.changedTouches[0]) {
+              touchStartX = e.changedTouches[0].clientX;
+            }
+          }, { passive: true });
+          zoneStage.addEventListener('touchend', (e) => {
+            if (e.changedTouches && e.changedTouches[0]) {
+              const dx = e.changedTouches[0].clientX - touchStartX;
+              if (Math.abs(dx) > 45) {
+                if (dx < 0) goNextZone();
+                else goPrevZone();
+              }
+            }
+          }, { passive: true });
+        }
+
+        setActiveZone(0, 1, false);
+      }
+
+      // 9. Auto Photo Slideshows (Part 6 & Part 8)
+      const slideshowContainers = document.querySelectorAll('.auto-photo-slideshow');
+      slideshowContainers.forEach((slideshowContainer) => {
         const slides = slideshowContainer.querySelectorAll('.slideshow-slide');
         const dots = slideshowContainer.querySelectorAll('.auto-slide-dot');
         const totalAutoSlides = slides.length;
+        if (!totalAutoSlides) return;
         let currentAutoSlide = 0;
         let autoSlideTimer = null;
 
@@ -2086,8 +2259,8 @@
           }, 5000);
         };
 
-        const prevBtn = document.getElementById('autoSlidePrevBtn');
-        const nextBtn = document.getElementById('autoSlideNextBtn');
+        const prevBtn = slideshowContainer.querySelector('.slideshow-prev-btn');
+        const nextBtn = slideshowContainer.querySelector('.slideshow-next-btn');
         if (prevBtn) {
           prevBtn.addEventListener('click', () => {
             const next = (currentAutoSlide - 1 + totalAutoSlides) % totalAutoSlides;
@@ -2115,7 +2288,7 @@
 
         updateSlideshowUI(0);
         startAutoSlideTimer();
-      }
+      });
 
       // Initialize Scroll-Triggered Count-Up Observers
       const countUpEls = document.querySelectorAll('[data-countup]');
